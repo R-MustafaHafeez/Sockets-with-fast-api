@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... other meta tags ... -->
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const socket = io('http://localhost:8000');
+
+            socket.on('connect', () => {
+                console.log('Connected to the server.');
+            });
+
+            socket.on('message', (data) => {
+                console.log('Message from server:', data);
+            });
+
+            socket.on('disconnect', () => {
+                console.log('Disconnected from server.');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Socket.IO with FastAPI</h1>
+    <p>Check the console for messages.</p>
+</body>
+</html>
