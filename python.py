@@ -1,24 +1,3 @@
-# import socketio
-# from fastapi import FastAPI
-
-# sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins='*')
-# app = FastAPI()
-# socket_app = socketio.ASGIApp(sio, other_asgi_app=app)
-
-# @sio.event
-# async def connect(sid, environ):
-#     print('Client connected', sid)
-#     await sio.emit('message', {'data': 'Hello, client!'}, to=sid)
-
-# @sio.event
-# async def disconnect(sid):
-#     print('Client disconnected', sid)
-
-# app.mount("/", socket_app)
-
-# if __name__ == '__main__':
-#     import uvicorn
-#     uvicorn.run(app, host='0.0.0.0', port=8000)
 import socketio
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
